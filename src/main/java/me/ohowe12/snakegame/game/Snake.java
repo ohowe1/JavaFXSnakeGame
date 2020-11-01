@@ -16,10 +16,13 @@ public class Snake extends GameElement {
         setX(8);
         setY(startingY);
         pieces.add(new SnakePiece(8, startingY));
-        addSnakePiece();
-        addSnakePiece();
-        addSnakePiece();
-        addSnakePiece();
+        addXSnakePieces(4);
+    }
+
+    private void addXSnakePieces(int x) {
+        for (int i = 0; i < x; i++) {
+            addSnakePiece();
+        }
     }
 
     public void addSnakePiece() {
@@ -57,7 +60,7 @@ public class Snake extends GameElement {
 
     private boolean checkCollisionWithSelf() {
         for (int i = pieces.size() - 1; i > 0; i--) {
-            if (pieces.get(i).getPosition().same(this.position)) {
+            if (pieces.get(i).getPosition().equals(this.position)) {
                 return true;
             }
         }
@@ -74,6 +77,6 @@ public class Snake extends GameElement {
     }
 
     public boolean isCollidingWithGameElement(GameElement element) {
-        return element.getPosition().same(position);
+        return element.getPosition().equals(position);
     }
 }

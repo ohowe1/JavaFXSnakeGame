@@ -1,6 +1,6 @@
 package me.ohowe12.snakegame.util;
 
-public class Position {
+public class Position extends Object {
 
     private int x;
     private int y;
@@ -26,7 +26,16 @@ public class Position {
         this.y = y;
     }
 
-    public boolean same(Position position) {
-        return position.getX() == x && position.getY() == y;
+    @Override
+    public boolean equals(Object object) {
+        if (object == this) {
+            return true;
+        }
+        if (!(object instanceof Position)) {
+            return false;
+        }
+        Position position = (Position) object;
+
+        return position.x == x && position.y == y;
     }
 }

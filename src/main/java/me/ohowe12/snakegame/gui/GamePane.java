@@ -1,9 +1,7 @@
 package me.ohowe12.snakegame.gui;
 
 import java.util.ArrayList;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -18,15 +16,9 @@ public class GamePane extends Pane {
     private final ArrayList<GameElement> gameElements = new ArrayList<>();
     private final Label scoreLabel = new Label("0");
     private final Text gameOverLabel = new Text("Game Over");
-    private boolean gameOver = false;
-    private final int xSize;
-    private final int ySize;
     private final int pixelSize = 20;
 
     public GamePane(int xSize, int ySize) {
-        this.xSize = xSize;
-        this.ySize = ySize;
-
         scoreLabel.setTextFill(Color.GREEN);
         scoreLabel.setFont(new Font(20));
 
